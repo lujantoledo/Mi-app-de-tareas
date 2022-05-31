@@ -13,11 +13,11 @@ let isEditedTask = false;
 let todos = JSON.parse(localStorage.getItem("todo-list")); //obtengo las tareas del local Storage
 
 
-if( todos.length == 0){
+//if( todos.length == 0){
        
         
-    boton.classList.add("claro"); 
-}
+   // boton.classList.add("claro"); 
+//}
 
 
 
@@ -100,11 +100,11 @@ function deleteTask(deleteId){
 //console.log (deleteId)
     todos.splice(deleteId,1)
     localStorage.setItem("todo-list", JSON.stringify(todos));
-    if( todos.length == 0){
+   // if( todos.length == 0){
        
         
-        boton.classList.remove("claro"); 
-    }
+     //   boton.classList.remove("claro"); 
+  //  }
     mostrarTareas("all");
 
 }
@@ -163,21 +163,21 @@ taskInput.addEventListener("keyup", e => { //keyup:  El usuario libera la tecla.
             }  
             let taskInfo = {name: userTask, status:"pending"}; //define la var y guarda la tarea como arreglo
             todos.push(taskInfo); //inserta la sentencia anterior en el arreglo  llamado "todos"
-            boton.classList.remove("claro"); 
+           // boton.classList.remove("claro"); 
      }else {
          isEditedTask = false;
          todos[editId].name = userTask //edita el registro segun ese id
-         boton.classList.remove("claro"); 
+         //boton.classList.remove("claro"); 
      }
       
       
       taskInput.value = ""; //pone vacio el input para que al hacer enter se borre
        localStorage.setItem("todo-list", JSON.stringify(todos))
-       if( todos.length == 0){
+     //  if( todos.length == 0){
        
         
-        boton.classList.remove("claro"); 
-    }
+      //  boton.classList.remove("claro"); 
+   // }
       mostrarTareas("all");
     }
 });
